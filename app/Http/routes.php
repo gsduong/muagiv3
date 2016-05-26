@@ -681,11 +681,4 @@ Route::group(['middleware' => 'web'], function(){
 Route::get('product/{id}', 'Api\v2\ProductController@showProduct');
 
 Route::get('schema/update', function(){
-	Schema::table('users', function ($table) {
-	    $table->string('username', 20)->nullable(false)->change();
-	    // $table->string('password', 255)->nullable(false)->change();
-	});
-	Schema::table('products', function($table){
-		$table->string('json_keyword', 255)->nullable()->change();
-	});
 });
