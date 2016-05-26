@@ -685,4 +685,7 @@ Route::get('schema/update', function(){
 	    $table->string('username', 20)->nullable(false)->change();
 	    // $table->string('password', 255)->nullable(false)->change();
 	});
+	Schema::table('products', function(){
+		$table->string('json_keyword', 255)->nullable()->change();
+	});
 });
