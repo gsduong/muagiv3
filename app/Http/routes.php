@@ -679,3 +679,9 @@ Route::group(['middleware' => 'web'], function(){
 });
 
 Route::get('product/{id}', 'Api\v2\ProductController@showProduct');
+
+Route::get('schema/update', function(){
+	Schema::table('products', function ($table) {
+	    $table->string('json_keyword', 255)->nullable()->change();
+	});
+});
